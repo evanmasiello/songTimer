@@ -205,9 +205,20 @@ function playSong() {
     console.log("time of day: " + songTimeOfDay);
     console.log("song start buffer: " + songStartTime);
 
+    document.getElementById("editingSection").style.display = "none";
+    document.getElementById("playingSection").style.display = "block";
+
     createLink();
     playSongs();
   }
+}
+
+function editSongSettings() {
+  document.getElementById("editingSection").style.display = "block";
+  document.getElementById("playingSection").style.display = "none";
+
+  if (songTimeout != "") clearTimeout(songTimeout);
+  activeSong = false;
 }
 
 function convertToSecs(strTime) {
