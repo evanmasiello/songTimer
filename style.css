@@ -98,6 +98,9 @@ h3 {
   h3 {
     font-size: 26px;
   }
+  html {
+    background-color: white;
+  }
 }
 
 /* Style links */
