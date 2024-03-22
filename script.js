@@ -19,11 +19,30 @@ var songCode = "r90xDchufXE";
 var songStartTime = 0;
 var songTimeOfDay = new Date();
 
+var blackScreenTimeout = "";
+var seekTimeout = "";
+
 console.log("url params: " + urlParamsLoad.toString());
 
 for (const key of urlParamsLoad.keys()) {
   console.log(key);
 }
+
+function isMobile() {
+  if ("maxTouchPoints" in navigator) return navigator.maxTouchPoints > 0;
+
+  const mQ = matchMedia?.("(pointer:coarse)");
+  if (mQ?.media === "(pointer:coarse)") return !!mQ.matches;
+
+  if ("orientation" in window) return true;
+
+  return (
+    /\b(BlackBerry|webOS|iPhone|IEMobile)\b/i.test(navigator.userAgent) ||
+    /\b(Android|Windows Phone|iPad|iPod)\b/i.test(navigator.userAgent)
+  );
+}
+
+var isUserMobile = isMobile();
 
 if (
   urlParamsLoad.has("songCode") &&
@@ -61,7 +80,7 @@ function exampleSong() {
     case 1:
       songLink =
         "https://www.youtube.com/watch?v=jo1ikmeLUVE&pp=ygUIZGF0ZSBAIDg%3D";
-      songStartTime = "9";
+      songStartTime = "0:09";
       songPlayTime = "20:00";
       songDescription = "4batz says “I'll come and slide by 8 p.m” at 8pm";
       break;
@@ -143,7 +162,7 @@ function playSong() {
     }
 
     if (!songStartTimeString.includes(":"))
-      songStartTimeString += songStartTimeString + "s";
+      songStartTimeString = songStartTimeString + "s";
 
     document.getElementById("displaySongTime").innerHTML = songStartTimeString;
 
@@ -216,6 +235,8 @@ function playSong() {
 function editSongSettings() {
   document.getElementById("editingSection").style.display = "block";
   document.getElementById("playingSection").style.display = "none";
+
+  stopVideo();
 
   if (songTimeout != "") clearTimeout(songTimeout);
   activeSong = false;
@@ -354,7 +375,7 @@ function displayCurrentTime() {
   } else {
     // var delayTimeDisp = new Date(0).toISOString().slice(11, 19);
 
-    // document.getElementById("timeTillStart").innerHTML = delayTimeDisp;
+    document.getElementById("timeTillStart").innerHTML = "0:00";
     document.getElementById("currentTimeOfDay").innerHTML = timeString;
   }
 
@@ -380,6 +401,13 @@ function playSongs() {
     videoId: String(songCode),
     startSeconds: delayPlay + 5,
   });
+
+  if (isUserMobile) {
+    if (blackScreenTimeout != "") clearTimeout(blackScreenTimeout);
+    blackScreenTimeout = setTimeout(playTheSong, 5000, "AjWfY7SnMBI", 1000);
+    if (seekTimeout != "") clearTimeout(seekTimeout);
+    seekTimeout = setTimeout(() => player.seekTo(0), 6000);
+  }
 
   if (delayPlay < 0) {
     songTimeout = setTimeout(playTheSong, Math.abs(delayPlay), songCode, 0);
