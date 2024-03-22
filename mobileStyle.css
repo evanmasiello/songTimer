@@ -1,0 +1,32 @@
+h1 {
+  font-size: 40px;
+}
+
+h2 {
+  font-size: 36px;
+}
+
+h3 {
+  font-size: 32px;
+}
+
+button {
+  font-size: 30px;
+}
+
+input {
+  padding: 2px;
+  font-size: 30px;
+}
+
+input[type="time"] {
+  font-size: 28px;
+}
+
+#song_time {
+  width: 66px;
+}
+
+textarea {
+  font-size: 30px;
+}

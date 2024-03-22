@@ -83,26 +83,6 @@ h3 {
   font-weight: bold;
 }
 
-@media only screen and (max-width: 767px) {
-  body {
-    font-size: 16px;
-  }
-  h1 {
-    font-size: 34px;
-  }
-
-  h2 {
-    font-size: 30px;
-  }
-
-  h3 {
-    font-size: 26px;
-  }
-  html {
-    background-color: white;
-  }
-}
-
 /* Style links */
 a {
   color: #007bff;
@@ -128,6 +108,7 @@ button {
   border-radius: 4px;
   cursor: pointer;
   font-size: 14px;
+  border: 1px solid black;
 }
 
 button:hover {
@@ -153,8 +134,20 @@ button:hover {
 input {
   padding: 2px;
   font-size: 14px;
+  border: 1px solid black;
 }
 
 input[type="time"] {
   font-size: 12px;
+  color: black;
+  background-color: white;
+}
+
+#song_time {
+  width: 50px;
+  text-align: center;
+}
+
+textarea {
+  font-size: 14px;
 }
