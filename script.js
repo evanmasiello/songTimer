@@ -402,7 +402,7 @@ function playSongs() {
     startSeconds: delayPlay + 5,
   });
 
-  if (isUserMobile) {
+  if (isUserMobile && delayPlay < 0) {
     if (blackScreenTimeout != "") clearTimeout(blackScreenTimeout);
     blackScreenTimeout = setTimeout(playTheSong, 5000, "AjWfY7SnMBI", 1000);
     if (seekTimeout != "") clearTimeout(seekTimeout);
