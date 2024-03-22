@@ -9,46 +9,46 @@
 
 <body>
     <div id="headContent">
-        <h2>
+        <h1>
             Use this website to play a certain part of a song at a certain time!
-        </h2>
+        </h1>
     </div>
     <br>
     <div id="bodyContent">
         <div id="editingSection">
-            <h2 class="titleHeading">Song:</h2><span class="line" style="padding-left: 5px;">
-                <h3 class="line">YouTube Link:</h3>
+            <h1 class="titleHeading">Song:</h1><span class="line" style="padding-left: 5px;">
+                <h2 class="line">YouTube Link:</h2>
                 <input id="song_link" class="line" type="text"
                     placeholder="https://www.youtube.com/watch?v=BjFQRwLj_FQ&pp=ygUScGxheSBlbSBsaWtlIGF0YXJp" />
             </span>
-            <h2 class="titleHeading">Timing:</h2>
+            <h1 class="titleHeading">Timing:</h1>
             <span class="line" style="padding-left: 5px;">
-                <h3>Play song section starting at
+                <h2>Play song section starting at
                     <input id="song_time" class="line" type="text" placeholder="0:00" value="0:00" /> at
                     <input id="time_of_day" class="line" type="time" placeholder="0:00" value="12:00" />
-                </h3>
+                </h2>
             </span>
-            <h3 class="titleHeading">Describe the song (optional): </h3><textarea id="song_description"
+            <h2 class="titleHeading">Describe the song (optional): </h2><textarea id="song_description"
                 placeholder="A song plays at a certain time" rows="2" cols="25"></textarea>
             <br>
             <br>
-            <button onclick="playSong()">Start Playing</button></h3>
+            <button onclick="playSong()">Start Playing</button></h2>
             <br>
             <br>
-            <h3>or</h3>
+            <h2>or</h2>
             <br>
-            <button onclick="exampleSong()">Try a random example!</button></h3>
+            <button onclick="exampleSong()">Try a random example!</button></h2>
         </div>
         <div id="playingSection" style="display: none;">
             <br>
-            <h2>Playing <span id="displaySongTime">0:00</span> at <span id="displayTimeOfDay">12:00 PM</span> - <button
+            <h1>Playing <span id="displaySongTime">0:00</span> at <span id="displayTimeOfDay">12:00 PM</span> - <button
                     onclick="editSongSettings()">Edit Settings</button>
                 <br>Current Time: <span id="currentTimeOfDay"></span> - Song Will Start in <span
                     id="timeTillStart">0</span>
-            </h2>
+            </h1>
             <br>
             <span id="sondDescWrap" style="display: none;">
-                <h2><span id="song-description-display"></h2><br>
+                <h1><span id="song-description-display"></h1><br>
             </span></span>
             <div id="playerContain">
                 <div id="player">
@@ -59,8 +59,8 @@
                 </div>
             </div>
             <br>
-            <h2>Share this song schedule: <button id="shareLink" onclick="copyLink()">Copy Link!</button><span
-                    id="scheduleUrl" style="display: none;"></span></h2><br>
+            <h1>Share this song schedule: <button id="shareLink" onclick="copyLink()">Copy Link!</button><span
+                    id="scheduleUrl" style="display: none;"></span></h1><br>
 </body>
 <script src="script.js"></script>
 

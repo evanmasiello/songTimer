@@ -69,14 +69,17 @@ h3 {
 }
 
 h1 {
+  font-size: 24px;
   font-weight: bold;
 }
 
 h2 {
+  font-size: 20px;
   font-weight: bold;
 }
 
 h3 {
+  font-size: 16px;
   font-weight: bold;
 }
 
@@ -97,13 +100,14 @@ p {
 
 /* Add some basic styling to buttons */
 button {
-  padding: 4px 5px;
-  margin-bottom: 4px;
+  padding: 5px 5px;
+  margin-bottom: 6px;
   background-color: white;
   color: black;
   border: none;
   border-radius: 4px;
   cursor: pointer;
+  font-size: 14px;
 }
 
 button:hover {
@@ -124,4 +128,13 @@ button:hover {
 #timeTillStart {
   color: white;
   text-shadow: 1px 1px black;
+}
+
+input {
+  padding: 2px;
+  font-size: 14px;
+}
+
+input[type="time"] {
+  font-size: 12px;
 }
