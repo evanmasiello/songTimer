@@ -27,7 +27,7 @@ body {
   margin-bottom: 10px;
   border: inset;
   overflow-x: auto;
-  height: 94vh;
+  min-height: 83vh;
 }
 
 #headContent {
@@ -51,6 +51,7 @@ body {
 
 #player {
   margin: auto;
+  max-width: 100%;
 }
 
 /* Set a max width for the content */
@@ -150,4 +151,8 @@ input[type="time"] {
 
 textarea {
   font-size: 14px;
+}
+
+#padder {
+  height: 32vh;
 }

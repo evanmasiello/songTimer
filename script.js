@@ -455,17 +455,17 @@ function copyLink() {
   }
 }
 
-function getCss(url) {
-  console.log("loading new css");
-  const links = document.querySelectorAll("link[href='" + url + "']");
-  if (links.length === 0) {
-    var head = document.getElementsByTagName("head")[0];
-    var fileref = document.createElement("link");
-    fileref.setAttribute("rel", "stylesheet");
-    fileref.setAttribute("type", "text/css");
-    fileref.setAttribute("href", url);
-    head.insertAdjacentElement("afterEnd", fileref, head.lastElementChild);
-  }
-}
+// function getCss(url) {
+//   console.log("loading new css");
+//   const links = document.querySelectorAll("link[href='" + url + "']");
+//   if (links.length === 0) {
+//     var head = document.getElementsByTagName("head")[0];
+//     var fileref = document.createElement("link");
+//     fileref.setAttribute("rel", "stylesheet");
+//     fileref.setAttribute("type", "text/css");
+//     fileref.setAttribute("href", url);
+//     head.insertAdjacentElement("afterEnd", fileref, head.lastElementChild);
+//   }
+// }
 
-if (isUserMobile) getCss("mobileStyle.css");
+// if (isUserMobile) getCss("mobileStyle.css");
